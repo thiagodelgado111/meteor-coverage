@@ -50,7 +50,7 @@ Npm.depends({
 });
 
 Package.onTest(function (api) {
-  api.use(['lmieulet:coverage-self-instrumenter@0.1.0'], ['server']);
+  api.use(['lmieulet:meteor-coverage-self-instrumenter@1.0.0'], ['server']);
   api.use('ecmascript');
   api.use(['lmieulet:meteor-coverage', 'tinytest'], ['server', 'client']);
   api.use('jquery', 'client');
