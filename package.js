@@ -9,6 +9,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('METEOR@1.3.1');
+  api.use(['lmieulet:coverage-self-instrumenter@0.0.2'], ['server']);
   api.use(['ecmascript', 'meteorhacks:picker@1.0.3'], 'server');
 
   api.use("modules");
@@ -51,7 +52,6 @@ Npm.depends({
 
 Package.onTest(function (api) {
   api.use('ecmascript');
-  api.use(['lmieulet:coverage-self-instrumenter@0.0.2'], ['server']);
   api.use(['lmieulet:meteor-coverage', 'tinytest'], ['server', 'client']);
   api.use('jquery', 'client');
 
