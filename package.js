@@ -40,16 +40,17 @@ Package.onUse(function(api) {
     'client/methods.js'
   ], 'client');
 
-  api.export("CoverageData", 'server');
+  api.export(["CoverageData", "SourceMap"], 'server');
 });
 
 
 Npm.depends({
   "istanbul-api": "1.0.0-alpha.13",
-  'body-parser': '1.15.0'
+  'body-parser': '1.15.1'
 });
 
 Package.onTest(function (api) {
+  api.use(['lmieulet:coverage-self-instrumenter'], ['server']);
   api.use(['lmieulet:meteor-coverage', 'tinytest'], ['server', 'client']);
   api.use('jquery', 'client');
 
