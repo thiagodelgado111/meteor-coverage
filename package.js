@@ -53,7 +53,7 @@ Package.onTest(function (api) {
   api.use('ecmascript');
   api.use(['lmieulet:coverage-self-instrumenter@0.0.2'], ['server']);
   api.use(['lmieulet:meteor-coverage', 'tinytest'], ['server', 'client']);
-  api.use('jquery', 'client', 'modules');
+  api.use('jquery', 'client');
 
   api.addFiles('tests/methods.js', 'client');
   api.addFiles([
