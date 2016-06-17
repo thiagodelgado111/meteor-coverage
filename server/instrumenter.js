@@ -108,6 +108,7 @@ if (IS_COVERAGE_ACTIVE) {
     Instrumenter = {
         instrumentJs: instrumentJs,
         shallInstrumentClientScript: shallInstrumentClientScript,
-        hookLoader: hookLoader
+        hookLoader: hookLoader,
+        checkIfAutorised: checkIfAutorised
     };
 }

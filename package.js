@@ -1,6 +1,6 @@
 Package.describe({
   name: 'lmieulet:meteor-coverage',
-  version: '0.7.2',
+  version: '0.8.0',
   summary: 'Server and client coverage for Meteor',
   git: 'https://github.com/serut/meteor-coverage',
   documentation: 'README.md',
