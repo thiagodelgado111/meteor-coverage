@@ -184,7 +184,6 @@ if (IS_COVERAGE_ACTIVE) {
                             fs.appendFileSync(filepath, data);
                         },
                         println: function(data) {
-                            Log.info(filepath, 'println', data)
                             fs.appendFileSync(filepath, data + '\r\n');
                         },
                         close: function() {
