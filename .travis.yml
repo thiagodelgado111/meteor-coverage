@@ -23,6 +23,9 @@ before_install:
 
 script:
   - spacejam test-packages ./ --loglevel debug --coverage
+  - cat lcov.info  # test
+  - cat report.json  # for travis
+  - cat lcov.info | coveralls || true # ignore coveralls error
   - cat lcov.info | coveralls || true # ignore coveralls error
   - cat lcov.info  | codecov || true # ignore codecov error
   - eslint . || true # ignore eslint error
