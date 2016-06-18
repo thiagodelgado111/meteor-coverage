@@ -51,24 +51,21 @@ if (IS_COVERAGE_ACTIVE) {
                             let packageName = regexFilepath[1];
                             const filepath = regexFilepath[2];
                             Log.info("packageName", packageName, "filepath", filepath,
-                            path.join(COVERAGE_APP_FOLDER, "packages", packageName, filepath),
-                            fs.existsSync(path.join(COVERAGE_APP_FOLDER, "packages", packageName, filepath)),
-                            path.join(COVERAGE_APP_FOLDER, filepath),
-                            fs.existsSync(path.join(COVERAGE_APP_FOLDER, filepath))
-                        )
-                            if (packageName) {
-                                if (packageName.indexOf(':') > 0) {
-                                    packageName = packageName.split(":")[1];
-                                }
-                                // meteor test-packages inside a meteor app
-                                if (fs.existsSync(path.join(COVERAGE_APP_FOLDER, "packages", packageName, filepath))) {
-                                    return true;
-                                }
+                                path.join(COVERAGE_APP_FOLDER, "packages", packageName, filepath),
+                                fs.existsSync(path.join(COVERAGE_APP_FOLDER, "packages", packageName, filepath)),
+                                path.join(COVERAGE_APP_FOLDER, filepath),
+                                fs.existsSync(path.join(COVERAGE_APP_FOLDER, filepath))
+                            )
+                            if (packageName.indexOf(':') > 0) {
+                                packageName = packageName.split(":")[1];
+                            }
+                            // meteor test-packages inside a meteor app
+                            if (fs.existsSync(path.join(COVERAGE_APP_FOLDER, "packages", packageName, filepath))) {
+                                return true;
                             } else {
                                 // meteor test-packages inside the package
                                 if (fs.existsSync(path.join(COVERAGE_APP_FOLDER, filepath))) {
                                     return true;
-
                                 }
                             }
                         }
