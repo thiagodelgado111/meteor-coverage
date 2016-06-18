@@ -9,13 +9,11 @@ if (IS_COVERAGE_ACTIVE) {
                 configuration = {},
                 defautConf = JSON.parse(Assets.getText('conf/default-coverage.json'));
 
-            if (coverageFile !== undefined) {
-                if (fs.existsSync(coverageFile)) {
-                    Log.info("Reading custom configuration");
-                    const configurationString = fs.readFileSync(coverageFile);
+            if (fs.existsSync(coverageFile)) {
+                Log.info("Reading custom configuration");
+                const configurationString = fs.readFileSync(coverageFile);
 
-                    configuration = JSON.parse(configurationString);
-                }
+                configuration = JSON.parse(configurationString);
             }
             // Set up default value if they are not provided in the .coverage.json file
             if (configuration) {
