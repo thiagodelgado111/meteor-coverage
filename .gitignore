@@ -2,3 +2,4 @@
 .coverage
 packages
 local-packages.json
+node_modules
